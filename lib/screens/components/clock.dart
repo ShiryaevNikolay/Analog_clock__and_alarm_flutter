@@ -2,10 +2,12 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:analog_clock_and_alarm/constants.dart';
+import 'package:analog_clock_and_alarm/models/theme_provider.dart';
 import 'package:analog_clock_and_alarm/screens/components/clock_painter.dart';
 import 'package:analog_clock_and_alarm/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class Clock extends StatefulWidget {
   @override
@@ -57,12 +59,18 @@ class _ClockState extends State<Clock> {
             top: 50,
             left: 0,
             right: 0,
-            child: SvgPicture.asset(
-              "assets/icons/ic_sun.svg",
-              height: 24,
-              width: 24,
-              color: Theme.of(context).primaryColor,
-            ))
+            child: Consumer<ThemeProvider>(
+                builder: (context, theme, child) => GestureDetector(
+                      onTap: () => theme.changeTheme(),
+                      child: SvgPicture.asset(
+                        theme.isLightTheme
+                            ? "assets/icons/ic_sun.svg"
+                            : "assets/icons/ic_moon.svg",
+                        height: 24,
+                        width: 24,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    )))
       ],
     );
   }

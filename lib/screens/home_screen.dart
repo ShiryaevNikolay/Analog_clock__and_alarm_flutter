@@ -23,26 +23,23 @@ class HomeScreen extends StatelessWidget {
             color: Theme.of(context).iconTheme.color,
           ),
           onPressed: () {}),
-      actions: [
-        buildAddButton(context)
-      ],
+      actions: [buildAddButton(context)],
     );
   }
 
   Padding buildAddButton(BuildContext context) {
     return Padding(
-          padding: EdgeInsets.symmetric(
-              horizontal: getProportionateScreenWidth(10)),
-          child: InkWell(
-            onTap: () {},
-            child: Container(
-              width: getProportionateScreenWidth(32),
-              decoration: BoxDecoration(
-                  color: Theme.of(context).primaryColor,
-                  shape: BoxShape.circle),
-              child: Icon(Icons.add, color: Colors.white),
-            ),
-          ),
-        );
+      padding:
+          EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(10)),
+      child: GestureDetector(
+        onTap: () {},
+        child: Container(
+          width: getProportionateScreenWidth(32),
+          decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor, shape: BoxShape.circle),
+          child: Icon(Icons.add, color: Colors.white),
+        ),
+      ),
+    );
   }
 }
