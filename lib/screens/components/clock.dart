@@ -32,8 +32,9 @@ class _ClockState extends State<Clock> {
     return Stack(
       children: [
         Padding(
-          padding:
-              EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
+          padding: EdgeInsets.symmetric(
+              horizontal: getProportionateScreenWidth(20),
+              vertical: getProportionateScreenWidth(20)),
           child: AspectRatio(
             aspectRatio: 1,
             child: Container(

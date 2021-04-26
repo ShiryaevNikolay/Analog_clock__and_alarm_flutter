@@ -17,7 +17,10 @@ class CountryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: getProportionateScreenWidth(20)),
+      padding: EdgeInsets.only(
+          left: getProportionateScreenWidth(10),
+          right: getProportionateScreenWidth(10),
+          bottom: getProportionateScreenWidth(10)),
       child: SizedBox(
           width: getProportionateScreenWidth(233),
           child: AspectRatio(
